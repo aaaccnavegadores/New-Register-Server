@@ -15,7 +15,7 @@ export async function getCurrentManagement (req, res) {
   try{
     const management = await Diretoria.find(filter, {}, options)
 
-    if (!management) {
+    if (!management.length) {
       console.log('[arquivo: DiretoriaController -> funcao: getCurrentManagement] Diretoria não encontrada')
       return res.status(EnumHTTPCode.NOT_FOUND).json({ message: EnumMessage.NO_MANAGEMENT })
     }

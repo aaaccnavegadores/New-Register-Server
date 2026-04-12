@@ -25,6 +25,7 @@ router.get(
 
 router.get(
   '/ativos',
+  validate(getAllMembersSchema, 'query'),
   getActiveMembers
 )
 

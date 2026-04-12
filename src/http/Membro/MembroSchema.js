@@ -53,4 +53,4 @@ export const memberIdSchema = Joi.object({
 export const memberDocSchema = Joi.object({
   cpf: Joi.string().optional(),
   matricula: Joi.string().optional()
-})
+}).or('cpf', 'matricula')
