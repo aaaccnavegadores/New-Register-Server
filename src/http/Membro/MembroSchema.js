@@ -10,11 +10,11 @@ export const postMemberSchema = Joi.object({
     rua: Joi.string().trim().required(),
     numero: Joi.string().required().allow(null).default(null),
     bairro: Joi.string().trim().required(),
-    complemento: Joi.string().trim().optional(),
+    complemento: Joi.string().trim().optional().allow(null),
     cidade: Joi.string().trim().required()
   }).required(),
   telefone: Joi.string().trim().required(),
-  telefone_emergencia: Joi.string().trim().optional(),
+  telefone_emergencia: Joi.string().trim().optional().allow(null),
   condicao: Joi.string().optional().allow(null),
   categoria: Joi.string().trim().valid('discente', 'docente').required(),
   ocupacao: Joi.string().trim().valid('atleta', 'treinos', 'membro').required(),
@@ -29,15 +29,15 @@ export const putMemberSchema = Joi.object({
   cpf: Joi.string().trim().regex(/[0-9]+/).min(11).max(14).required().allow(null).default(null),
   email: Joi.string().trim().email().lowercase().required(),
   endereco: Joi.object().keys({
-    cep: Joi.string().trim().optional(),
+    cep: Joi.string().trim().optional().allow(null),
     rua: Joi.string().trim().required(),
     numero: Joi.string().required().allow(null).default(null),
     bairro: Joi.string().trim().required(),
-    complemento: Joi.string().trim().optional(),
+    complemento: Joi.string().trim().optional().allow(null),
     cidade: Joi.string().trim().required()
   }).required(),
   telefone: Joi.string().trim().required(),
-  telefone_emergencia: Joi.string().trim().optional(),
+  telefone_emergencia: Joi.string().trim().optional().allow(null),
   condicao: Joi.string().optional().allow(null)
 })
 
